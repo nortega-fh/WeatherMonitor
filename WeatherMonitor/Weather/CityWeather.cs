@@ -1,8 +1,17 @@
-﻿namespace WeatherMonitor.Weather;
+﻿using System.Text.Json.Serialization;
+using System.Xml.Serialization;
+
+namespace WeatherMonitor.Weather;
 
 public class CityWeather
 {
     public string Location { get; set; } = string.Empty;
-    public float Temperature { get; set; }
-    public float Humidity { get; set; }
+
+    [JsonPropertyName("temperature")]
+    [XmlElement("Temperature")]
+    public float CentigradesTemperature { get; set; }
+
+    [JsonPropertyName("humidity")]
+    [XmlElement("Humidity")]
+    public float HumidityPercentage { get; set; }
 }
