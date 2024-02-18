@@ -1,8 +1,6 @@
-﻿using WeatherMonitor.Weather;
-
-namespace WeatherMonitor.weather;
+﻿namespace WeatherMonitor.Weather;
 
 public interface IWeatherReader
 {
-    public CityWeather Read(string fileName);
+    public WeatherData? Read(string fileName);
 }

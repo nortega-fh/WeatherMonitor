@@ -9,8 +9,8 @@ public class FileReaderFactory : IFileReaderFactory
         string fileExtension = Path.GetExtension(file);
         return fileExtension switch
         {
-            "json" => new JsonReader(),
-            "xml" => new XmlReader(),
+            ".json" => new JsonReader(),
+            ".xml" => new XmlReader(),
             _ => throw new FileExtensionException(fileExtension)
         };
     }

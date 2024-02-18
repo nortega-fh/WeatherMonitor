@@ -3,7 +3,7 @@ using System.Xml.Serialization;
 
 namespace WeatherMonitor.Weather;
 
-public class CityWeather
+public class WeatherData
 {
     public string Location { get; set; } = string.Empty;
 

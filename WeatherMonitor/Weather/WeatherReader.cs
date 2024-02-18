@@ -1,11 +1,19 @@
-﻿using WeatherMonitor.Weather;
+﻿using WeatherMonitor.FileReaders;
 
-namespace WeatherMonitor.weather;
+namespace WeatherMonitor.Weather;
 
 public class WeatherReader : IWeatherReader
 {
-    public CityWeather Read(string fileName)
+    private readonly IFileReaderFactory _readerFactory;
+
+    public WeatherReader(IFileReaderFactory readerFactory)
     {
-        throw new NotImplementedException();
+        _readerFactory = readerFactory;
+    }
+
+    public WeatherData? Read(string fileName)
+    {
+        var fileReader = _readerFactory.GetReaderForFile(fileName);
+        return fileReader.Parse<WeatherData>(fileName);
     }
 }
