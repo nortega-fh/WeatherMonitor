@@ -14,6 +14,10 @@ public class SunBot : IBot
 
     public void Activate(WeatherData data)
     {
-        throw new NotImplementedException();
+        if (Enabled && data.CentigradesTemperature > CentigradesTemperatureThreshold)
+        {
+            Console.WriteLine("SunBot activated!");
+            Console.WriteLine(Message);
+        }
     }
 }

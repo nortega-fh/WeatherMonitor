@@ -14,6 +14,10 @@ public class RainBot : IBot
 
     public void Activate(WeatherData data)
     {
-        throw new NotImplementedException();
+        if (Enabled && data.HumidityPercentage > HumidityPercentageThreshold)
+        {
+            Console.WriteLine("RainBot activated!");
+            Console.WriteLine(Message);
+        }
     }
 }

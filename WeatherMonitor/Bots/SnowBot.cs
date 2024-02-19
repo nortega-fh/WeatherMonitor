@@ -14,6 +14,10 @@ public class SnowBot : IBot
 
     public void Activate(WeatherData data)
     {
-        throw new NotImplementedException();
+        if (Enabled && data.CentigradesTemperature < CentigradesTemperatureThreshold)
+        {
+            Console.WriteLine("SnowBot activated!");
+            Console.WriteLine(Message);
+        }
     }
 }

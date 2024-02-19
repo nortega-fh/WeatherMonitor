@@ -1,7 +1,7 @@
 {
   "RainBot": {
     "enabled": true,
-    "humidityThreshold": 70,
+    "humidityThreshold": 80,
     "message": "It looks like it's about to pour down!"
   },
   "SunBot": {
@@ -10,8 +10,8 @@
     "message": "Wow, it's a scorcher out there!"
   },
   "SnowBot": {
-    "enabled": false,
-    "temperatureThreshold": 0,
+    "enabled": true,
+    "temperatureThreshold": 5,
     "message": "Brrr, it's getting chilly!"
   }
 }
