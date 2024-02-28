@@ -43,6 +43,7 @@ public class MainView
         while (fileName is null or "")
         {
             Console.WriteLine("Invalid input. Please try again");
+            fileName = Console.ReadLine();
             continue;
         }
 
