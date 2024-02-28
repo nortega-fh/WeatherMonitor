@@ -20,4 +20,17 @@ public class RainBot : IBot
             Console.WriteLine(Message);
         }
     }
+
+    public override bool Equals(object? obj)
+    {
+        return obj is RainBot other
+            && other.Enabled == Enabled
+            && other.Message.Equals(Message)
+            && other.HumidityPercentageThreshold.Equals(HumidityPercentageThreshold);
+    }
+
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(Enabled, Message, HumidityPercentageThreshold);
+    }
 }

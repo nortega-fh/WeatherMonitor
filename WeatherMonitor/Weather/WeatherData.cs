@@ -14,4 +14,13 @@ public class WeatherData
     [JsonPropertyName("humidity")]
     [XmlElement("Humidity")]
     public float HumidityPercentage { get; set; }
+
+    public override bool Equals(object? obj) => obj is WeatherData data && data.Location.Equals(Location)
+            && data.CentigradesTemperature == CentigradesTemperature
+            && data.HumidityPercentage == HumidityPercentage;
+
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(Location, CentigradesTemperature, HumidityPercentage);
+    }
 }
