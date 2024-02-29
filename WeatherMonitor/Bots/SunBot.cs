@@ -20,4 +20,17 @@ public class SunBot : IBot
             Console.WriteLine(Message);
         }
     }
+
+    public override bool Equals(object? obj)
+    {
+        return obj is SunBot other
+            && other.Enabled == Enabled
+            && other.Message.Equals(Message)
+            && other.CentigradesTemperatureThreshold.Equals(CentigradesTemperatureThreshold);
+    }
+
+    public override int GetHashCode()
+    {
+        return HashCode.Combine(Enabled, Message, CentigradesTemperatureThreshold);
+    }
 }
