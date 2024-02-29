@@ -34,9 +34,9 @@ public class FileReaderShould
     public void ThrowWhenFileDoesNotExists()
     {
         var fakeFileName = Fixture.Create<string>();
-        var deserializerMoq = new Mock<IDeserializer<IBot>>();
+        var deserializerMoq = new Mock<IDeserializer<It.IsAnyType>>();
 
-        var sut = new FileReader<IBot>(deserializerMoq.Object);
+        var sut = new FileReader<It.IsAnyType>(deserializerMoq.Object);
 
         Assert.Throws<FileNotFoundException>(() => sut.Read(fakeFileName));
     }
